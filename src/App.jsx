@@ -4,6 +4,18 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import newImg from './assets/Dell_XPS_15_(2017).png'
 import './App.css'
+import { CORE_CONCEPTS } from './data'
+function CoreConcept(props){
+  return(
+    <div>
+      <p>{props.title}</p>
+      <p>{props.description}</p>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  )
+}
 
 function Header(){
 
@@ -110,7 +122,11 @@ function App(){
               </a>
             </li>
             <li>
-              <img src={newImg} alt ="coding machine"/>
+              {
+                CORE_CONCEPTS.map((element) => (
+                  <CoreConcept {...element}/>
+                ))
+              }
             </li>
           </ul>
         </div>
