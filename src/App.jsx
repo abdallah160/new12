@@ -37,7 +37,7 @@ const data ={
 
 function App(){
   const [count, setCount] = useState(0)
-  const [selectedTopic, setSelectedTopic] = useState('first');
+  const [selectedTopic, setSelectedTopic] = useState();
   function handleClick(value){
     console.log("click handled");
     setSelectedTopic(value);
@@ -144,8 +144,7 @@ function App(){
         <MyButton onClick={() => handleClick("second")}>Hey there</MyButton>
         <MyButton onClick={() => handleClick("third")}>Hey there</MyButton>
         <MyButton onClick={() => handleClick("fourth")}>Hey there</MyButton>
-        <p>{data[selectedTopic]}</p>
-        
+        {selectedTopic? <p>{data[selectedTopic]}</p> : <p>please select a topic</p>}
       </div>
 
       <div className="ticks"></div>
