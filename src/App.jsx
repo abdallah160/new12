@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import newImg from './assets/Dell_XPS_15_(2017).png'
 import './App.css'
 
 function Header(){
@@ -107,6 +108,9 @@ function App(){
                 </svg>
                 Bluesky
               </a>
+            </li>
+            <li>
+              <img src={newImg} alt ="coding machine"/>
             </li>
           </ul>
         </div>
