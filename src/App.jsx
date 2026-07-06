@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import newImg from './assets/Dell_XPS_15_(2017).png'
 import './App.css'
 import { CORE_CONCEPTS } from './data'
+import MyButton from './MyButton'
 function CoreConcept(props){
   return(
     <div>
@@ -27,9 +28,22 @@ function Header(){
     </div>
   )
 }
+const data ={
+  first : "first first first first",
+  second : "second second second second",
+  third : "third third third third",
+  fourth : "fourth fourth fourth fourth"
+}
 
 function App(){
   const [count, setCount] = useState(0)
+  const [selectedTopic, setSelectedTopic] = useState('first');
+  function handleClick(value){
+    console.log("click handled");
+    setSelectedTopic(value);
+    console.log(selectedTopic);
+  }
+
 
   return (
     <>
@@ -121,16 +135,18 @@ function App(){
                 Bluesky
               </a>
             </li>
-            <li>
-              {
-                CORE_CONCEPTS.map((element) => (
-                  <CoreConcept {...element}/>
-                ))
-              }
-            </li>
           </ul>
         </div>
+        
       </section>
+      <div>
+        <MyButton onClick={() => handleClick("first")}>Hey there</MyButton>
+        <MyButton onClick={() => handleClick("second")}>Hey there</MyButton>
+        <MyButton onClick={() => handleClick("third")}>Hey there</MyButton>
+        <MyButton onClick={() => handleClick("fourth")}>Hey there</MyButton>
+        <p>{data[selectedTopic]}</p>
+        
+      </div>
 
       <div className="ticks"></div>
       <section id="spacer"></section>
